@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-07_15-03-52",
+            "content": "class Camisa:\n    def __init__(self, size:str = \"\"):\n        self.__size:str = \"\"\n    def get_size(self) -> str:\n        return self.__size\n    def set_size(self, size:str):\n        acc_sizes:list[str] = [\"PP\", \"P\", \"M\", \"G\", \"GG\", \"XG\"]\n        if size not in acc_sizes:\n            print(\"fail: Valor inv\u00e1lido, tente PP, P, M, G, GG ou XG\")\n        else:\n            self.__size = size\n    def __str__(self) -> str:\n        return f\"size: ({self.size})\"\n\ndef main():\n    camisa: Camisa = Camisa()\n    while True:\n        line: list[str] = input().split(\" \")\n        print(\"$\"+list[0])\n        if list[0] == \"end\":\n            break\n        elif list[0] == \"size\":\n            camisa.set_size(list[1])\n        elif list[0] == \"show\":\n            print(camisa)\n        else:\n            print(\"comando invalido\")\n\nmain()",
+            "lines": "29"
+        }
+    ]
+}
