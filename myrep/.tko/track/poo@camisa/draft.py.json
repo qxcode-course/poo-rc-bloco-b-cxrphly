@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-07_14-45-36",
+            "content": "@@ -534,14 +534,8 @@\n ut()\n-.upper\n )%0A%0A \n@@ -582,19 +582,8 @@\n e%7D%22)\n-%0A    exit()\n %0A%0Ama\n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-10-07_14-46-22",
+            "content": "@@ -298,17 +298,16 @@\n tamanhos\n- \n validos \n@@ -536,18 +536,16 @@\n ().upper\n-()\n )%0A%0A    p\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-10-07_14-47-28",
+            "content": "@@ -588,12 +588,21 @@\n size\n-()\n %7D%22\n+)%0A    exit(\n )%0A%0Am\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-10-07_14-50-07",
+            "content": "class Camisa:\n    def __init__(self, size:str = \"\"):\n        self.__size:str = \"\"\n    def get_size(self) -> str:\n        return self.__size\n    def set_size(self, size:str):\n        acc_sizes:list[str] = [\"PP\", \"P\", \"M\", \"G\", \"GG\", \"XG\"]\n        if size not in acc_sizes:\n            print(\"fail: tamanhos validos -> PP, P, M, G, GG e XG\")\n        else:\n            self.__size = size\n\ndef main():\n    camisa: Camisa = Camisa()\n    while camisa.get_size() == \"\":\n        print(\"Digie seu tamanho de roupa\")\n        camisa.set_size(input().upper())\n\n    print(f\"roupa tamanho {camisa.get_size()}\")\n\nmain()",
+            "lines": "21"
+        }
+    ]
+}
