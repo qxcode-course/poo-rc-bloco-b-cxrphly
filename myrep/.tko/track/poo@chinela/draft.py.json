@@ -2,8 +2,13 @@
     "patches": [
         {
             "label": "2025-10-07_11-42-03",
-            "content": "class Chinela:\n    def __init__(self):\n        self.__tamanho:int = 0\n    def get_tamanho(self)->int:\n        return self.__tamanho\n    def set_tamanho(self, value:int)->None:\n        if not value in range(20,51) and value % 2 != 0:\n            print(\"tamanho invalido\")\n            return\n        else:\n            self.__tamanho = value\n\ndef main():\n    chinela = Chinela()\n    while chinela.get_tamanho()==0:\n        print(\"Digite seu tamano de chinela\")\n        tamanho = int(input())\n        chinela.set_tamanho(tamanho)\n    print(f\"Parabens vc comprou uma de chinela de tamanho {chinela.get_tamanho()}\")",
+            "content": "@@ -210,10 +210,11 @@\n 51) \n-or\n+and\n  val\n@@ -436,17 +436,16 @@\n eu taman\n-h\n o de chi\n@@ -606,12 +606,4 @@\n )%7D%22)\n-%0A%0Amain()\n",
             "lines": "19"
+        },
+        {
+            "label": "2025-10-11_16-47-03",
+            "content": "class Chinela:\n    def __init__(self):\n        self.__tamanho:int = 0\n    def get_tamanho(self)->int:\n        return self.__tamanho\n    def set_tamanho(self, value:int)->None:\n        if not value in range(20,51) or value % 2 != 0:\n            print(\"tamanho invalido\")\n            return\n        else:\n            self.__tamanho = value\n\ndef main():\n    chinela = Chinela()\n    while chinela.get_tamanho()==0:\n        print(\"Digite seu tamanho de chinela\")\n        tamanho = int(input())\n        chinela.set_tamanho(tamanho)\n    print(f\"Parabens vc comprou uma de chinela de tamanho {chinela.get_tamanho()}\")\n\nmain()",
+            "lines": "21"
         }
     ]
 }

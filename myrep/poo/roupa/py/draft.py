@@ -3,8 +3,8 @@ class Camisa:
         self.__size:str = ""
     def get_size(self) -> str:
         return self.__size
-    def set_size(self, size:str):
-        acc_sizes:list[str] = ["PP", "P", "M", "G", "GG", "XG"]
+    def set_size(self, size: str):
+        acc_sizes: list[str] = ["PP", "P", "M", "G", "GG", "XG"]
         if size not in acc_sizes:
             print("fail: Valor inválido, tente PP, P, M, G, GG ou XG")
         else:
@@ -16,7 +16,7 @@ def main():
     camisa: Camisa = Camisa()
     while True:
         line: str = input()
-        arg : list[str] = line.split(" ")
+        arg : list[str] = line.split()
         print("$"+line)
         if arg[0] == "end":
             break

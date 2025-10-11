@@ -2,8 +2,28 @@
     "patches": [
         {
             "label": "2025-10-07_15-03-52",
-            "content": "class Camisa:\n    def __init__(self, size:str = \"\"):\n        self.__size:str = \"\"\n    def get_size(self) -> str:\n        return self.__size\n    def set_size(self, size:str):\n        acc_sizes:list[str] = [\"PP\", \"P\", \"M\", \"G\", \"GG\", \"XG\"]\n        if size not in acc_sizes:\n            print(\"fail: Valor inv\u00e1lido, tente PP, P, M, G, GG ou XG\")\n        else:\n            self.__size = size\n    def __str__(self) -> str:\n        return f\"size: ({self.size})\"\n\ndef main():\n    camisa: Camisa = Camisa()\n    while True:\n        line: list[str] = input().split(\" \")\n        print(\"$\"+list[0])\n        if list[0] == \"end\":\n            break\n        elif list[0] == \"size\":\n            camisa.set_size(list[1])\n        elif list[0] == \"show\":\n            print(camisa)\n        else:\n            print(\"comando invalido\")\n\nmain()",
+            "content": "@@ -28,16 +28,31 @@\n t__(self\n+, size:str = %22%22\n ):%0A     \n@@ -66,17 +66,16 @@\n .__size:\n- \n str = %22%22\n@@ -161,17 +161,16 @@\n f, size:\n- \n str):%0A  \n@@ -185,17 +185,16 @@\n c_sizes:\n- \n list%5Bstr\n@@ -294,24 +294,51 @@\n il: \n-tamanho\n+Valor\n  inv\n-a\n+%C3%A1\n lido\n+, tente PP, P, M, G, GG ou XG\n %22)%0A \n@@ -438,21 +438,21 @@\n ze: \n+(\n %7Bself.\n-__\n size%7D\n+)\n %22%0A%0Ad\n@@ -472,16 +472,24 @@\n   camisa\n+: Camisa\n  = Camis\n@@ -524,45 +524,66 @@\n line\n- = input()%0A        args = line.split(\n+: list%5Bstr%5D = input().split(%22 %22)%0A        print(%22$%22+list%5B0%5D\n )%0A  \n@@ -591,20 +591,20 @@\n      if \n-args\n+list\n %5B0%5D == %22\n@@ -632,36 +632,36 @@\n ak%0A        elif \n-args\n+list\n %5B0%5D == %22size%22:%0A \n@@ -687,20 +687,20 @@\n et_size(\n-args\n+list\n %5B1%5D)%0A   \n@@ -713,12 +713,12 @@\n lif \n-args\n+list\n %5B0%5D \n@@ -787,22 +787,16 @@\n  print(%22\n-fail: \n comando \n@@ -813,9 +813,8 @@\n %0A%0Amain()\n-%0A\n",
             "lines": "29"
+        },
+        {
+            "label": "2025-10-11_17-05-50",
+            "content": "@@ -51,16 +51,17 @@\n .__size:\n+ \n str = %22%22\n@@ -282,13 +282,15 @@\n il: \n-Valor\n+tamanho\n  inv\n@@ -298,37 +298,8 @@\n lido\n-, tente PP, P, M, G, GG ou XG\n %22)%0A \n@@ -414,67 +414,8 @@\n e%7D%22%0A\n-# por algum motivo nao consegui realizar o TEST_CASE do tko\n %0Adef\n@@ -437,16 +437,8 @@\n misa\n-: Camisa\n  = C\n@@ -473,21 +473,16 @@\n     line\n-: str\n  = input\n@@ -499,20 +499,9 @@\n  arg\n- : list%5Bstr%5D\n+s\n  = l\n@@ -516,32 +516,8 @@\n t()%0A\n-        print(%22$%22+line)%0A\n     \n@@ -522,24 +522,25 @@\n       if arg\n+s\n %5B0%5D == %22end%22\n@@ -567,32 +567,33 @@\n         elif arg\n+s\n %5B0%5D == %22size%22:%0A \n@@ -622,16 +622,17 @@\n size(arg\n+s\n %5B1%5D)%0A   \n@@ -644,16 +644,17 @@\n elif arg\n+s\n %5B0%5D == %22\n@@ -719,16 +719,22 @@\n  print(%22\n+fail: \n comando \n@@ -747,12 +747,13 @@\n do%22)%0A%0Amain()\n+%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-10-11_17-16-51",
+            "content": "@@ -421,17 +421,16 @@\n f%22size: \n-(\n %7Bself.__\n@@ -434,17 +434,16 @@\n .__size%7D\n-)\n %22%0A# por \n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-10-11_17-17-28",
+            "content": "@@ -290,9 +290,9 @@\n  inv\n-%C3%A1\n+a\n lido\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-10-11_17-17-53",
+            "content": "class Camisa:\n    def __init__(self):\n        self.__size:str = \"\"\n    def get_size(self) -> str:\n        return self.__size\n    def set_size(self, size: str):\n        acc_sizes: list[str] = [\"PP\", \"P\", \"M\", \"G\", \"GG\", \"XG\"]\n        if size not in acc_sizes:\n            print(\"fail: Valor inv\u00e1lido, tente PP, P, M, G, GG ou XG\")\n        else:\n            self.__size = size\n    def __str__(self) -> str:\n        return f\"size: ({self.__size})\"\n# por algum motivo nao consegui realizar o TEST_CASE do tko\ndef main():\n    camisa: Camisa = Camisa()\n    while True:\n        line: str = input()\n        arg : list[str] = line.split()\n        print(\"$\"+line)\n        if arg[0] == \"end\":\n            break\n        elif arg[0] == \"size\":\n            camisa.set_size(arg[1])\n        elif arg[0] == \"show\":\n            print(camisa)\n        else:\n            print(\"comando invalido\")\n\nmain()",
+            "lines": "30"
         }
     ]
 }
