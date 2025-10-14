@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-14_11-20-36",
+            "content": "@@ -120,16 +120,17 @@\n  = True%0A\n+%0A\n     def \n@@ -218,805 +218,43 @@\n     \n-if self.__ligado == False:%0A            return %22Status: Desligado%22%0A        else:%0A            return %22Status: Ligado%22%0A        %0A    def usar(self, tempo:int) -%3E None:%0A        if self.__ligado:%0A            print(F%22Usando por %7Btempo%7D minutos%22)%0A        else:%0A            print(%22erro: ligue o notebook primeiro%22)%0A%0A%0Adef main():%0A    line:str = input()%0A    print(%22$%22+line)%0A    args:list%5Bstr%5D = line.split(%22 %22)%0A    notebook = Notebook()%0A    while True:%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22show%22:%0A            notebook.mostrar()%0A        elif args%5B0%5D == %22desligar%22:%0A            notebook.desligar()%0A        elif args%5B0%5D == %22ligar%22:%0A            notebook.ligar()%0A        elif args%5B0%5D == %22usar%22:%0A            notebook.usar(args%5B1%5D)%0A%0A        else:%0A            print(%22invalido%22)%0A%0Amain()\n+return f%22notebook esta %7Bself.__ligado%7D%22\n",
+            "lines": "12"
+        },
+        {
+            "label": "2025-10-14_11-30-46",
+            "content": "@@ -367,27 +367,28 @@\n mpo:int) -%3E \n-str\n+None\n :%0A        if\n@@ -415,23 +415,22 @@\n         \n-return \n+print(\n F%22Usando\n@@ -450,16 +450,17 @@\n minutos%22\n+)\n %0A       \n@@ -478,22 +478,22 @@\n         \n-return\n+print(\n %22erro: l\n@@ -517,16 +517,17 @@\n rimeiro%22\n+)\n %0A%0A%0Adef m\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-10-14_11-31-51",
+            "content": "@@ -421,17 +421,17 @@\n  return \n-f\n+F\n %22Usando \n@@ -487,10 +487,8 @@\n turn\n- f\n %22err\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-10-14_11-32-31",
+            "content": "class Notebook:\n    def __init__(self):\n        self.__ligado: bool = False\n\n    def ligar(self):\n        self.__ligado = True\n    def desligar(self):\n        self.__ligado = False\n\n    def mostrar(self) -> str:\n        if self.__ligado == False:\n            return \"Status: Desligado\"\n        else:\n            return \"Status: Ligado\"\n        \n    def usar(self, tempo:int) -> str:\n        if self.__ligado:\n            return f\"Usando por {tempo} minutos\"\n        else:\n            return f\"erro: ligue o notebook primeiro\"\n\n\ndef main():\n    line:str = input()\n    print(\"$\"+line)\n    args:list[str] = line.split(\" \")\n    notebook = Notebook()\n    while True:\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            notebook.mostrar()\n        elif args[0] == \"desligar\":\n            notebook.desligar()\n        elif args[0] == \"ligar\":\n            notebook.ligar()\n        elif args[0] == \"usar\":\n            notebook.usar(args[1])\n\n        else:\n            print(\"invalido\")\n\nmain()",
+            "lines": "43"
+        }
+    ]
+}
