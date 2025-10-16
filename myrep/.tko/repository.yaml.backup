@@ -7,13 +7,8 @@ sources:
   filters: null
 - database: poo
   link: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
-<<<<<<< HEAD
   cache_path: C:\Users\halys\poo-rc-bloco-b-cxrphly\myrep\.tko\cache\poo.md
-  cache_timestamp: '2025-10-14 11:16:39'
-=======
-  cache_path: /workspaces/poo-rc-bloco-b-cxrphly/myrep/.tko/cache/poo.md
-  cache_timestamp: '2025-10-11 22:04:53'
->>>>>>> d01e3bdcc5fc950a24e707312d6692e521ac1234
+  cache_timestamp: '2025-10-16 08:45:03'
   filters:
   - acesso
   - simples
@@ -22,6 +17,7 @@ expanded:
 - poo@bloco_b-agregação-simples
 tasks:
   poo@roupa: '{rate:100}'
+  poo@relogio: '{rate:100}'
 flags:
   quests: 0
   tracks: 0
@@ -29,4 +25,4 @@ flags:
   graph: 0
   xray: 0
 lang: py
-selected: poo@motoca
+selected: poo@notebook
