@@ -5,16 +5,21 @@ class Bateria:
 
     def getBateria(self):
         return f"{self.__carga}/{self.__capacidade}"
-
-    def chargeBateria(self, amount: int):
-        self.__carga = min(self.__carga + amount, self.__capacidade)
-
-    def usingBateria(self, use_time: int):
-        self.__carga = max(0, self.__carga - use_time)
-
+    def usingBateria(self, tempo:int):
+        self.__carga -= tempo
+        if self.__carga < 0:
+            self.__carga = 0
+    # def carregar?
     def temCarga(self):
         return self.__carga > 0
-
+    
+    
+class Carregador:
+    def __init__(self, potencia:int):
+        self.__potencia = potencia
+    def getPotencia(self):
+        return self.__potencia
+    
 class Notebook:
     def __init__(self):
         self.__ligado = False
