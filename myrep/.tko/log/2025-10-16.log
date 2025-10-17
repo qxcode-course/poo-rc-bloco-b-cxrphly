@@ -11,3 +11,5 @@
 2025-10-16 10:01:29, EXEC, v:1, k:poo@charger, mode:FULL, rate:0, size:148
 2025-10-16 10:01:52, EXEC, v:1, k:poo@charger, mode:FULL, rate:5, size:148
 2025-10-16 10:02:03, MOVE, v:1, k:poo@charger, mode:BACK
+2025-10-16 10:15:50, MOVE, v:1, k:poo@charger, mode:PICK
+2025-10-16 10:15:52, EXEC, v:1, k:poo@charger, mode:FULL, rate:5, size:148
