@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-21_10-59-57",
+            "content": "@@ -333,16 +333,20 @@\n ower:int\n+ = 1\n , time:i\n@@ -347,16 +347,20 @@\n time:int\n+ = 0\n ):%0A     \n@@ -970,26 +970,8 @@\n ():%0A\n-    moto = Moto()%0A\n     \n@@ -1163,11 +1163,8 @@\n oto(\n-1,0\n )%0A  \n",
+            "lines": "56"
+        },
+        {
+            "label": "2025-10-21_11-01-43",
+            "content": "@@ -889,129 +889,54 @@\n     \n-statusPerson = self.__pessoa.getName if self.__pessoa else %22(empty)%22%0A        return f%22power:%7Bself.__power%7D, \n+return f%22%7Bself.__power%7D %7Bself.__\n time\n-:\n+%7D \n %7Bself.__\n time\n@@ -935,34 +935,14 @@\n f.__\n-time%7D person:%7BstatusPerson\n+pessoa\n %7D%22%0A \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-10-21_11-13-28",
+            "content": "@@ -337,12 +337,8 @@\n :int\n- = 1\n , ti\n@@ -339,28 +339,24 @@\n nt, time:int\n- = 0\n ):%0A        s\n@@ -850,28 +850,24 @@\n  removed%22)%0A%0A\n-    \n     def __st\n@@ -885,20 +885,16 @@\n         \n-   \n- \n statusPe\n@@ -921,18 +921,16 @@\n .getName\n-()\n  if self\n@@ -954,20 +954,16 @@\n empty)%22%0A\n-    \n         \n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-10-21_11-21-34",
+            "content": "@@ -858,24 +858,28 @@\n  removed%22)%0A%0A\n+    \n     def __st\n@@ -881,32 +881,36 @@\n  __str__(self):%0A\n+    \n         statusPe\n@@ -972,16 +972,20 @@\n empty)%22%0A\n+    \n         \n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-10-21_11-23-15",
+            "content": "@@ -1021,17 +1021,16 @@\n .__time%7D\n-,\n  person:\n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-10-21_11-23-33",
+            "content": "@@ -912,12 +912,8 @@\n n = \n-f%22(%7B\n self\n@@ -935,36 +935,8 @@\n me()\n-%7D:%7Bself.__pessoa.getAge()%7D)%22\n  if \n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-10-21_11-25-48",
+            "content": "@@ -333,16 +333,20 @@\n ower:int\n+ = 1\n , time:i\n@@ -347,16 +347,20 @@\n time:int\n+ = 0\n ):%0A     \n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-10-21_11-26-18",
+            "content": "class Pessoa:\n    def __init__(self, name:str = \"\", age:int = 0):\n        self.__age = age\n        self.__name = name\n    def getAge(self):\n        return self.__age\n    def getName(self):\n        return self.__name\n    def __str__(self) -> str:\n        return f\"{self.__name} {self.__age}\"\n    \nclass Moto:\n    def __init__(self, power:int, time:int):\n        self.__pessoa: Pessoa | None = None\n        self.__power: int =  power\n        self.__time: int = time\n        \n    def insertPerson(self, person: Pessoa):\n        if self.__pessoa:\n            print(\"fail: busy motorcycle\")\n        else:\n            self.__pessoa = person\n\n    def removePerson(self):\n        if not self.__pessoa:\n            print(\"fail: empty motorcycle\")\n        else:\n            aux = self.__pessoa\n            self.__pessoa = None\n            return print(f\"{aux} removed\")\n\n    def __str__(self):\n        statusPerson = f\"({self.__pessoa.getName()}:{self.__pessoa.getAge()})\" if self.__pessoa else \"(empty)\"\n        return f\"power:{self.__power}, time:{self.__time}, person:{statusPerson}\"\n    \n\ndef main():\n    moto = Moto()\n    while True:\n        line = input()\n        print(\"$\"+line)\n        arg = line.split(\" \")\n\n        if arg[0] == \"end\":\n            break\n        if arg[0] == \"init\":\n            moto = Moto(1,0)\n        elif arg[0] == \"enter\":\n            person = Pessoa(arg[1],arg[2])\n            moto.insertPerson(person)\n        elif arg[0] == \"leave\":\n            moto.removePerson()\n        elif arg[0] == \"show\":\n            print(moto)\n        else:\n            print(\"comando invalido\")\n\nmain()\n",
+            "lines": "58"
+        }
+    ]
+}
