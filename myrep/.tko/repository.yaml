@@ -8,16 +8,18 @@ sources:
 - database: poo
   link: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
   cache_path: C:\Users\halys\poo-rc-bloco-b-cxrphly\myrep\.tko\cache\poo.md
-  cache_timestamp: '2025-10-21 11:21:31'
+  cache_timestamp: '2025-10-22 09:07:06'
   filters:
   - acesso
   - simples
 expanded:
 - poo@campanha-principal
+- poo@bloco_b-modificadores-de-acesso
 - poo@bloco_b-agregação-simples
 tasks:
   poo@roupa: '{rate:100}'
   poo@relogio: '{rate:100}'
+  poo@motoca: '{rate:100}'
   poo@charger: '{rate:100}'
 flags:
   quests: 0
