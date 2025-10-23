@@ -7,8 +7,68 @@
         },
         {
             "label": "2025-10-23_15-47-35",
-            "content": "class Lead:\n    def __init__(self, thickness:int, hardness:str, size:int ):\n        self.__thickness = thickness\n        self.__hardness = hardness\n        self.__size = size\n\n    def usagePerPage(self):\n\n    def __str__(self):\n        return f\"{self.__thickness}:{self.__hardness}:{self.__size}\"\n    \nclass Pencil:\n    def __init__(self, thickness:int):\n        self.__thickness = thickness\n        self.__tip: Lead | None = None\n\n    def hasLead(self):\n        return self.tip if not None else False\n    \n    def __str__(self):\n        return f\"\"\n    def insertLead(self, tip:Lead):\n        self.__tip = tip\n    def removeLead(self):\n        self.__tip = None\n    def writePage(self):\n",
+            "content": "@@ -201,186 +201,9 @@\n f):%0A\n-        usage = %7B%22HB%22 : 1, %222B%22 : 2, %224B%22 : 4, %226B%22 : 6%7D%0A        for tip in usage:%0A            if self.__hardness == tip:%0A                return usage%5Btip%5D%0A        return 0%0A    \n %0A\n+\n     \n@@ -540,34 +540,16 @@\n eturn f%22\n-%7Bself.__thickness%7D\n %22%0A    de\n@@ -684,403 +684,4 @@\n f):%0A\n-        uso = self.__tip.usagePerPage()%0A        self.__tip -= uso%0A%0Adef main():%0A    pencil:Pencil%7CNone = None%0A    while True:%0A        line = input()%0A        print(%22$%22+line)%0A        args:list%5Bstr%5D=line.split(%22 %22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22init%22:%0A            pencil = pencil(int(args%5B1%5D))%0A        elif args%5B0%5D == %22show%22:%0A            print(pencil)%0A%0A%0Amain()\n",
             "lines": "26"
+        },
+        {
+            "label": "2025-10-23_16-30-54",
+            "content": "@@ -1270,262 +1270,8 @@\n il)%0A\n-        elif args%5B0%5D == %22insert%22:%0A            pencil.insertLead()%0A        elif args%5B0%5D == %22remove%22:%0A            pencil.removeLead()%0A        elif args%5B0%5D == %22write%22:%0A            pencil.writePage()%0A        else:%0A            print(%22fail: comando invalido%22)%0A\n %0A%0Ama\n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-10-23_16-33-44",
+            "content": "@@ -38,20 +38,18 @@\n ickness:\n-floa\n+in\n t, hardn\n@@ -379,242 +379,8 @@\n    %0A\n-    def getThickness(self):%0A        return self.__thickness%0A    def getHardness(self):%0A        return self.__hardness%0A    def getSize(self):%0A        return self.__size%0A    %0A    def setSize(self, size:int):%0A        self.__size = size%0A%0A\n     \n@@ -523,12 +523,10 @@\n ess:\n-floa\n+in\n t):%0A\n@@ -649,16 +649,14 @@\n elf.\n-__\n tip i\n-s\n+f\n  not\n@@ -660,21 +660,92 @@\n not None\n-%0A    \n+ else False%0A    %0A    def __str__(self):%0A        return f%22%7Bself.__thickness%7D%22\n %0A    def\n@@ -850,18 +850,16 @@\n  = None%0A\n-%0A%0A\n     def \n@@ -946,102 +946,8 @@\n so%0A%0A\n-%0A    def __str__(self):%0A        return f%22calibre: %7Bself.__thickness%7D, grafite: %7Bself.__tip%7D%22%0A%0A\n def \n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-10-23_16-42-20",
+            "content": "@@ -1569,68 +1569,8 @@\n t%22:%0A\n-            tip = Lead(int(args%5B1%5D), args%5B2%5D, int(args%5B3%5D))%0A\n     \n@@ -1595,19 +1595,16 @@\n ertLead(\n-tip\n )%0A      \n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-10-23_16-45-06",
+            "content": "@@ -43,22 +43,16 @@\n ss:float\n- = 0.0\n , hardne\n@@ -61,13 +61,8 @@\n :str\n- = %22%22\n , si\n@@ -72,12 +72,8 @@\n int \n-= 0 \n ):%0A \n@@ -764,14 +764,8 @@\n loat\n- = 0.0\n ):%0A \n@@ -1240,19 +1240,20 @@\n ncil\n- = Pencil()\n+%7CNone = None\n %0A   \n@@ -1311,17 +1311,16 @@\n $%22+line)\n- \n %0A       \n@@ -1456,19 +1456,17 @@\n l = \n-P\n+p\n encil(\n-floa\n+in\n t(ar\n@@ -1588,20 +1588,18 @@\n  = Lead(\n-floa\n+in\n t(args%5B1\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-10-23_16-48-52",
+            "content": "@@ -1162,37 +1162,8 @@\n f):%0A\n-        if self.hasLead:%0A    \n     \n@@ -1231,88 +1231,8 @@\n p%7D%22%0A\n-        else:%0A            return f%22calibre: %7Bself.__thickness%7D, grafite: null%22%0A%0A\n %0Adef\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-10-23_16-49-55",
+            "content": "@@ -967,35 +967,8 @@\n d):%0A\n-        if self.hasLead():%0A\n     \n@@ -1181,18 +1181,16 @@\n .hasLead\n-()\n :%0A      \n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-10-23_16-51-07",
+            "content": "@@ -994,28 +994,24 @@\n ():%0A        \n-    \n self.__tip =\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-10-23_16-51-41",
+            "content": "@@ -1006,519 +1006,103 @@\n     \n-print(%22fail: ja existe grafite%22)%0A            return%0A        elif tip.getThickness() != self.__thickness%0A            print(%22fail: calibre imcompativel%22)%0A            return%0A        %0A        else:%0A            self.__tip = tip%0A    def removeLead(self):%0A        if not self.hasLead():%0A            print(%22fail: nao existe grafite%22)%0A            return%0A        else:%0A            self.__tip = None%0A%0A%0A    def writePage(self):%0A        if not self.hasLead():%0A            print(%22fail: nao existe grafite%22)%0A            return\n+self.__tip = tip%0A    def removeLead(self):%0A        self.__tip = None%0A%0A%0A    def writePage(self):\n %0A   \n@@ -1142,27 +1142,24 @@\n e()%0A        \n-if \n self.__tip.g\n@@ -1160,309 +1160,17 @@\n _tip\n-.getSize() %3C= 10:%0A            print(%22fail: tamanho insuficiente%22)%0A            return%0A        elif self.__tip.getSize()\n  -\n+=\n  uso\n- %3C 10:%0A            self.__tip.setSize(10)%0A            print(%22fail: folha incompleta%22)%0A            return%0A        %0A        self.__tip.setSize(self.__tip.getSize() - uso)%0A        \n+%0A%0A\n %0A   \n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-10-23_17-01-48",
+            "content": "@@ -1105,17 +1105,16 @@\n hickness\n-:\n %0A       \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-23_17-02-14",
+            "content": "@@ -1141,17 +1141,17 @@\n alibre i\n-n\n+m\n compativ\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-23_17-02-23",
+            "content": "@@ -1987,17 +1987,16 @@\n rafite: \n-%5B\n %7Bself.__\n@@ -1999,17 +1999,16 @@\n f.__tip%7D\n-%5D\n %22%0A      \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-23_17-02-50",
+            "content": "class Lead:\n    def __init__(self, thickness:float = 0.0, hardness:str = \"\", size:int = 0 ):\n        self.__thickness = thickness\n        self.__hardness = hardness\n        self.__size = size\n\n    def usagePerPage(self):\n        usage = {\"HB\" : 1, \"2B\" : 2, \"4B\" : 4, \"6B\" : 6}\n        for tip in usage:\n            if self.__hardness == tip:\n                return usage[tip]\n        return 0\n    \n    def getThickness(self):\n        return self.__thickness\n    def getHardness(self):\n        return self.__hardness\n    def getSize(self):\n        return self.__size\n    \n    def setSize(self, size:int):\n        self.__size = size\n\n    def __str__(self):\n        return f\"{self.__thickness}:{self.__hardness}:{self.__size}\"\n    \nclass Pencil:\n    def __init__(self, thickness:float = 0.0):\n        self.__thickness = thickness\n        self.__tip: Lead | None = None\n\n    def hasLead(self):\n        return self.__tip is not None\n    \n    def insertLead(self, tip:Lead):\n        if self.hasLead():\n            print(\"fail: ja existe grafite\")\n            return\n        elif tip.getThickness() != self.__thickness:\n            print(\"fail: calibre incompativel\")\n            return\n        \n        else:\n            self.__tip = tip\n    def removeLead(self):\n        if not self.hasLead():\n            print(\"fail: nao existe grafite\")\n            return\n        else:\n            self.__tip = None\n\n\n    def writePage(self):\n        if not self.hasLead():\n            print(\"fail: nao existe grafite\")\n            return\n        uso = self.__tip.usagePerPage()\n        if self.__tip.getSize() <= 10:\n            print(\"fail: tamanho insuficiente\")\n            return\n        elif self.__tip.getSize() - uso < 10:\n            self.__tip.setSize(10)\n            print(\"fail: folha incompleta\")\n            return\n        \n        self.__tip.setSize(self.__tip.getSize() - uso)\n        \n    def __str__(self):\n        if self.hasLead():\n            return f\"calibre: {self.__thickness}, grafite: [{self.__tip}]\"\n        else:\n            return f\"calibre: {self.__thickness}, grafite: null\"\n\n\ndef main():\n    pencil:Pencil = Pencil()\n    while True:\n        line = input()\n        print(\"$\"+line) \n        args:list[str]=line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            pencil = Pencil(float(args[1]))\n        elif args[0] == \"show\":\n            print(pencil)\n        elif args[0] == \"insert\":\n            tip = Lead(float(args[1]), args[2], int(args[3]))\n            pencil.insertLead(tip)\n        elif args[0] == \"remove\":\n            pencil.removeLead()\n        elif args[0] == \"write\":\n            pencil.writePage()\n        else:\n            print(\"fail: comando invalido\")\n\n\nmain()",
+            "lines": "99"
         }
     ]
 }
