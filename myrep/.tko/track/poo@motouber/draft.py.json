@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-23_17-46-49",
+            "content": "@@ -2020,26 +2020,24 @@\n Cost: %7Bself.\n-__\n cost%7D, Drive\n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-10-23_17-47-22",
+            "content": "@@ -1974,23 +1974,20 @@\n  self.__\n-passeng\n+driv\n er else \n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-10-23_17-47-56",
+            "content": "@@ -494,29 +494,28 @@\n turn self.__\n-money\n+name\n %0A    def __s\n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-10-23_17-49-48",
+            "content": "@@ -2455,24 +2455,25 @@\n  == %22setPass\n+e\n %22:%0A         \n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-10-23_17-50-19",
+            "content": "@@ -1646,31 +1646,10 @@\n il: \n-Passenger does not have\n+no\n  eno\n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-10-23_17-51-10",
+            "content": "class Person:\n    def __init__(self, name:str, money:int):\n        self.__name = name\n        self.__money = money\n\n    def pay(self, amount:int):\n        if amount <= self.__money:\n            self.__money -= amount\n            return amount\n        else:\n            paid = self.__money\n            self.__money = 0\n            return paid\n    def earn(self, amout:int):\n        self.__money += amout\n\n    def getName(self):\n        return self.__name\n    \n    def getMoney(self):\n        return self.__money\n    def __str__(self):\n        return f\"{self.getName()}:{self.getMoney()}\"\n    \nclass Moto:\n    def __init__(self):\n        self.__cost = 0\n        self.__driver:Person|None = None\n        self.__passenger:Person|None = None\n    def setDrive(self, person:Person):\n        self.__driver = person\n\n    def setPassenger(self, person:Person):\n        if self.__driver is None:\n            print(\"fail: no driver\")\n            return\n        elif self.__passenger is not None:\n            print(\"fail: passenger is already in the motorcycle\")\n            return\n        else:\n            self.__passenger = person\n    def drive(self, distance:int):\n        if self.__driver is None:\n            print(\"fail: no driver\")\n            return\n        elif self.__passenger is None:\n            print(\"fail: no passenger\")\n            return\n        else:\n            self.__cost += distance\n\n    def leave(self):\n        if self.__passenger is None:\n            print(\"fail: no passenger\")\n            return\n        \n        payment = self.__cost\n        paid = self.__passenger.pay(payment)\n\n        if paid < payment:\n            print(\"fail: Passenger does not have enough money\")\n        self.__driver.earn(payment)\n        print(f\"{self.__passenger.getName()}:{self.__passenger.getMoney()} left\")\n\n        self.__cost = 0\n        self.__passenger = None\n    def __str__(self):\n        driver = str(self.__driver) if self.__driver else \"None\"\n        passenger = str(self.__passenger) if self.__passenger else \"None\"\n\n\n        return f\"Cost: {self.__cost}, Driver: {driver}, Passenger: {passenger}\"\n    \n\n\ndef main():\n    moto = Moto()\n\n    while True:\n        line = input()\n        print(\"$\"+line)\n        args:list[str] = line.split(\" \")\n        \n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(moto)\n        elif args[0] == \"setDriver\":\n            moto.setDrive(Person(args[1], int(args[2])))\n        elif args[0] == \"setPass\":\n            moto.setPassenger(Person(args[1], int(args[2])))\n        elif args[0] == \"drive\":\n            moto.drive(int(args[1]))\n        elif args[0] == \"leavePass\":\n            moto.leave()\n        else:\n            print(\"fail: comando invalido\")\n        \nmain()\n\n",
+            "lines": "100"
+        }
+    ]
+}
